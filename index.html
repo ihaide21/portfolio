@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irfan H | Product Manager & Photographer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .title-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4f46e5;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .photo-card {
+            transition: all 0.3s ease;
+            transform: scale(1);
+        }
+        
+        .photo-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -20px;
+            width: 2px;
+            height: 20px;
+            background-color: #e5e7eb;
+            transform: translateX(-50%);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .grid-item {
+            transition: all 0.3s ease;
+        }
+        
+        .grid-item:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl title-font font-semibold text-indigo-600">Alex Carter</a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-indigo-600">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-indigo-600">About</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-indigo-600">Experience</a>
+                    <a href="#photography" class="nav-link text-gray-700 hover:text-indigo-600">Photography</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-indigo-600">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="text-gray-700 hover:text-indigo-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white py-2 px-4 shadow-lg">
+            <a href="#home" class="block py-2 text-gray-700 hover:text-indigo-600">Home</a>
+            <a href="#about" class="block py-2 text-gray-700 hover:text-indigo-600">About</a>
+            <a href="#experience" class="block py-2 text-gray-700 hover:text-indigo-600">Experience</a>
+            <a href="#photography" class="block py-2 text-gray-700 hover:text-indigo-600">Photography</a>
+            <a href="#contact" class="block py-2 text-gray-700 hover:text-indigo-600">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold title-font mb-6">
+                        <span class="text-indigo-600">Product Manager</span> &<br>
+                        <span class="text-gray-800">Photographer</span>
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                        I build digital products that users love while capturing the world's beauty through my lens.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#about" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300">
+                            Learn More
+                        </a>
+                        <a href="#photography" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition duration-300">
+                            View Photography
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <div class="relative">
+                        <div class="w-full h-96 bg-indigo-100 rounded-xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
+                                 alt="Professional headshot" 
+                                 class="w-full h-full object-cover object-center">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-white rounded-full shadow-lg overflow-hidden border-4 border-white">
+                            <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                                 alt="Photography" 
+                                 class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold title-font mb-4">About Me</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-semibold mb-4">Product Strategist with a Creative Eye</h3>
+                    <p class="text-gray-600 mb-6">
+                        With over 8 years of experience in product management, I specialize in transforming complex problems into intuitive, user-centric solutions. My approach combines analytical thinking with creative problem-solving to deliver products that drive business growth.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        When I'm not strategizing product roadmaps or analyzing user data, you'll find me behind the camera. Photography is my passion and creative outlet, allowing me to see the world from different perspectives.
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-6">
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Product Strategy</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">User Research</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Agile Development</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Portrait Photography</span>
+                        <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm">Landscape Photography</span>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-indigo-600 hover:text-indigo-800">
+                        Download Resume
+                        <i class="fas fa-arrow-down ml-2"></i>
+                    </a>
+                </div>
+                <div class="grid grid-cols-2 gap-4 fade-in">
+                    <div class="bg-gray-100 rounded-xl p-6 grid-item">
+                        <div class="text-indigo-600 text-3xl mb-3">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Product Growth</h4>
+                        <p class="text-sm text-gray-600">Led products with 300%+ user growth</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl p-6 grid-item">
+                        <div class="text-indigo-600 text-3xl mb-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Team Leadership</h4>
+                        <p class="text-sm text-gray-600">Managed cross-functional teams of 15+</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl p-6 grid-item">
+                        <div class="text-indigo-600 text-3xl mb-3">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Photography</h4>
+                        <p class="text-sm text-gray-600">Published in 5+ international magazines</p>
+                    </div>
+                    <div class="bg-gray-100 rounded-xl p-6 grid-item">
+                        <div class="text-indigo-600 text-3xl mb-3">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4 class="font-semibold mb-2">Innovation</h4>
+                        <p class="text-sm text-gray-600">3 patented product features</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold title-font mb-4">Professional Journey</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8 md:space-y-0 md:grid grid-cols-9 mx-auto">
+                    <!-- Left side -->
+                    <div class="flex flex-row-reverse md:contents">
+                        <div class="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto fade-in">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="font-semibold text-lg mb-1">Senior Product Manager</h3>
+                                <p class="text-indigo-600 mb-2">TechSolutions Inc.</p>
+                                <p class="text-gray-600 text-sm">2020 - Present</p>
+                                <p class="text-gray-600 mt-3">Leading product strategy for enterprise SaaS platform with $15M ARR. Spearheaded AI features that increased user engagement by 45%.</p>
+                            </div>
+                        </div>
+                        <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                            <div class="h-full w-6 flex items-center justify-center">
+                                <div class="h-full w-1 bg-indigo-600 pointer-events-none"></div>
+                            </div>
+                            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side -->
+                    <div class="flex md:contents">
+                        <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                            <div class="h-full w-6 flex items-center justify-center">
+                                <div class="h-full w-1 bg-indigo-600 pointer-events-none"></div>
+                            </div>
+                            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+                        </div>
+                        <div class="col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto fade-in">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="font-semibold text-lg mb-1">Product Manager</h3>
+                                <p class="text-indigo-600 mb-2">InnovateX</p>
+                                <p class="text-gray-600 text-sm">2017 - 2020</p>
+                                <p class="text-gray-600 mt-3">Managed mobile app development that grew to 2M+ users. Implemented data-driven decision making across product teams.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Left side -->
+                    <div class="flex flex-row-reverse md:contents">
+                        <div class="col-start-1 col-end-5 p-4 rounded-xl my-4 ml-auto fade-in">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="font-semibold text-lg mb-1">Associate Product Manager</h3>
+                                <p class="text-indigo-600 mb-2">Digital Ventures</p>
+                                <p class="text-gray-600 text-sm">2015 - 2017</p>
+                                <p class="text-gray-600 mt-3">Launched 3 successful features that increased retention by 30%. Worked closely with UX team to improve onboarding flow.</p>
+                            </div>
+                        </div>
+                        <div class="col-start-5 col-end-6 md:mx-auto relative mr-10">
+                            <div class="h-full w-6 flex items-center justify-center">
+                                <div class="h-full w-1 bg-indigo-600 pointer-events-none"></div>
+                            </div>
+                            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right side -->
+                    <div class="flex md:contents">
+                        <div class="col-start-5 col-end-6 mr-10 md:mx-auto relative">
+                            <div class="h-full w-6 flex items-center justify-center">
+                                <div class="h-full w-1 bg-indigo-600 pointer-events-none"></div>
+                            </div>
+                            <div class="w-6 h-6 absolute top-1/2 -mt-3 rounded-full bg-indigo-600 shadow"></div>
+                        </div>
+                        <div class="col-start-6 col-end-10 p-4 rounded-xl my-4 mr-auto fade-in">
+                            <div class="bg-white p-6 rounded-lg shadow-md">
+                                <h3 class="font-semibold text-lg mb-1">Business Analyst</h3>
+                                <p class="text-indigo-600 mb-2">StartUp Labs</p>
+                                <p class="text-gray-600 text-sm">2013 - 2015</p>
+                                <p class="text-gray-600 mt-3">Conducted market research and competitive analysis that shaped product direction for early-stage startup.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photography Section -->
+    <section id="photography" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold title-font mb-4">Photography Portfolio</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Capturing moments that tell stories. My work focuses on urban landscapes, portrait photography, and travel documentation.</p>
+            </div>
+            
+            <!-- Gallery Filters -->
+            <div class="flex justify-center mb-12">
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-l-lg border border-gray-200 bg-indigo-600 text-white" data-filter="all">
+                        All
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-700 hover:bg-gray-50" data-filter="portrait">
+                        Portraits
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium border-t border-b border-gray-200 bg-white text-gray-700 hover:bg-gray-50" data-filter="landscape">
+                        Landscapes
+                    </button>
+                    <button type="button" class="px-4 py-2 text-sm font-medium rounded-r-lg border border-gray-200 bg-white text-gray-700 hover:bg-gray-50" data-filter="street">
+                        Street
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Photo Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Portrait -->
+                <div class="photo-card fade-in" data-category="portrait">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md h-80">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Portrait photography" 
+                             class="w-full h-full object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-semibold">Urban Portrait</h3>
+                            <p class="text-sm text-gray-600">New York, 2022</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Landscape -->
+                <div class="photo-card fade-in" data-category="landscape">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md h-80">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Landscape photography" 
+                             class="w-full h-full object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-semibold">Mountain Dawn</h3>
+                            <p class="text-sm text-gray-600">Colorado, 2021</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Street -->
+                <div class="photo-card fade-in" data-category="street">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md h-80">
+                        <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Street photography" 
+                             class="w-full h-full object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-semibold">City Pulse</h3>
+                            <p class="text-sm text-gray-600">Chicago, 2023</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portrait -->
+                <div class="photo-card fade-in" data-category="portrait">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md h-80">
+                        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Portrait photography" 
+                             class="w-full h-full object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-semibold">Studio Session</h3>
+                            <p class="text-sm text-gray-600">Los Angeles, 2020</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Landscape -->
+                <div class="photo-card fade-in" data-category="landscape">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md h-80">
+                        <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Landscape photography" 
+                             class="w-full h-full object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-semibold">Coastal Sunset</h3>
+                            <p class="text-sm text-gray-600">Oregon, 2019</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Street -->
+                <div class="photo-card fade-in" data-category="street">
+                    <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md h-80">
+                        <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Street photography" 
+                             class="w-full h-full object-cover">
+                        <div class="p-4 bg-white">
+                            <h3 class="font-semibold">Metro Life</h3>
+                            <p class="text-sm text-gray-600">Tokyo, 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-md hover:bg-gray-100 transition duration-300 inline-flex items-center">
+                    View Full Portfolio
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold title-font mb-4">Get In Touch</h2>
+                <div class="w-20 h-1 bg-indigo-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Whether you're looking for product management expertise or photography services, I'd love to hear from you.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
+                            <select id="subject" name="subject" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border">
+                                <option>Product Management Inquiry</option>
+                                <option>Photography Services</option>
+                                <option>Speaking Engagement</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-3 border"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-300 w-full">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-indigo-600">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-500">Email</p>
+                                    <p class="text-sm text-gray-900">alex@example.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-indigo-600">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-500">Phone</p>
+                                    <p class="text-sm text-gray-900">(555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-indigo-600">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm font-medium text-gray-500">Location</p>
+                                    <p class="text-sm text-gray-900">San Francisco, CA</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="text-lg font-medium mb-4">Follow Me</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 hover:bg-indigo-100 hover:text-indigo-600">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl title-font font-semibold mb-4">Alex Carter</h3>
+                    <p class="text-gray-400">Product Manager & Photographer creating digital experiences and capturing visual stories.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+                        <li><a href="#experience" class="text-gray-400 hover:text-white">Experience</a></li>
+                        <li><a href="#photography" class="text-gray-400 hover:text-white">Photography</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-medium mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to my newsletter for product insights and photography updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-md w-full text-gray-900">
+                        <button type="submit" class="bg-indigo-600 px-4 py-2 rounded-r-md hover:bg-indigo-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Alex Carter. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Filter photography
+        const filterButtons = document.querySelectorAll('[data-filter]');
+        const photoCards = document.querySelectorAll('.photo-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Update active button
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-indigo-600', 'text-white');
+                    btn.classList.add('bg-white', 'text-gray-700');
+                });
+                this.classList.add('bg-indigo-600', 'text-white');
+                this.classList.remove('bg-white', 'text-gray-700');
+                
+                // Filter photos
+                const filter = this.getAttribute('data-filter');
+                photoCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Scroll animations
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeIn');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        fadeElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
